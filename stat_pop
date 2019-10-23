@@ -1,0 +1,47 @@
+ls
+import pandas as pd
+citi_bike=pd.read_csv('2013-07 - Citi Bike trip data.csv')
+citi_bike
+start_loc=citi_bike['start station name']
+start_loc
+list_start_loc=list(citi_bike['start station name'].sort_values())
+list_start_loc
+list_start_loc.count('Suffolk St & Stanton St')
+[
+x=citi_bike['start station name']
+y=""
+save=""
+list_loc_count=[]
+for x in list_start_loc:
+    if x==y:
+        continue
+    print(list_start_loc.count(x))
+    list_loc_count+=[list_start_loc.count(x)]
+    y=x
+    save+= x + ","
+]  
+print(list_loc_count)
+list_loc_count=list(list_loc_count)
+print(list_loc_count)
+save=save.split(sep=',')
+save=list(save)
+save
+start_loc_count=list(zip(save,list_loc_count))
+type(start_loc_count)
+station_popularity=sorted(start_loc_count, key=lambda x: x[1])
+station_popularity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
